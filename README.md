@@ -1,1 +1,2 @@
-изменение в файле readme
+Release preparation v1.0.0
+
