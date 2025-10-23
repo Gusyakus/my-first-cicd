@@ -1,2 +1,1 @@
-Release preparation v1.0.0
-
+релиз 1.0.0
