@@ -8,3 +8,4 @@ Update for development branch CI четверг, 23 октября 2025 г. 17:3
 Update for release branch CI четверг, 23 октября 2025 г. 17:36:47 (MSK)
 последнее изменение вносимое в документацию
 Update for main branch CI четверг, 23 октября 2025 г. 17:36:28 (MSK)
+ffff
