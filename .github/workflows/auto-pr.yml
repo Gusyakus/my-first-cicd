@@ -1,0 +1,35 @@
+name: Auto PR on Push
+
+on:
+  push:
+    branches:
+      - development
+      - release
+
+jobs:
+  create-pull-request:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          title: "Auto PR: ${{ github.ref_name }}"
+          commit-message: "Auto-created PR from ${{ github.ref_name }}"
+          base: main
+          branch: ${{ github.ref_name }}
+          body: |
+            Automated pull request created from push to ${{ github.ref_name }}
+            Branch: ${{ github.ref_name }}
+            Triggered by: ${{ github.actor }}
+          labels: |
+            automated-pr
